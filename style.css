@@ -1,0 +1,468 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&family=Montserrat&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+:root[data-theme='light'] {
+	--LimeGreen: hsl(163, 72%, 41%);
+	--BrightRed: hsl(356, 69%, 56%);
+	--Facebook: hsl(208, 92%, 53%);
+	--Twitter: hsl(203, 89%, 53%);
+	--Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+	--YouTube: hsl(348, 97%, 39%);
+	--bg: hsl(0, 0%, 100%);
+	--TopBGPattern: hsl(225, 100%, 98%);
+	--CardBG: hsl(227, 47%, 96%);
+	--Text: hsl(0, 0%, 19%);
+	--BlueText: hsl(230, 17%, 14%);
+	--Toggle: hsl(230, 22%, 74%);
+}
+:root[data-theme='dark'] {
+	--Facebook: hsl(208, 92%, 53%);
+	--Twitter: hsl(203, 89%, 53%);
+	--Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+	--YouTube: hsl(348, 97%, 39%);
+	--LimeGreen: hsl(163, 72%, 41%);
+	--BrightRed: hsl(356, 69%, 56%);
+	--bg: hsl(230, 17%, 14%);
+	--TopBGPattern: hsl(232, 19%, 15%);
+	--CardBG: hsl(228, 28%, 20%);
+	--BlueText: hsl(228, 34%, 66%);
+	--Text: hsl(0, 0%, 100%);
+	--Toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+
+
+p{
+    color:var(--BlueText);
+    font-weight: 600;
+
+}
+
+.social-container{
+    margin: 0;
+    padding:0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-container .social-content {
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+.social-content .header-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:1rem ;
+    padding-top: 0.5rem;
+}
+
+ .header-text h2{
+    font-weight: bold;
+    color:var(--Text)
+}
+
+.header-mode{
+    display: flex;
+    align-items: center;
+    gap:0.8rem;
+}
+.header-mode p{
+    font-size: 12px;
+}
+
+.button-mode{
+    width: 2.8rem;
+    height: 23px;
+    background: var(--LimeGreen);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.button-mode .button-control{
+    height: 18px;
+    width: 18px;
+    background: var(--TopBGPattern);
+    border-radius: 50%;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.btn-left{
+    position: absolute;
+    left:0;
+}
+
+
+.btn-right{
+    position: absolute;
+    left:25px;
+}
+
+
+.light-bg{
+    background:linear-gradient( var(--TopBGPattern) 30%,var(--bg) 0%);
+}
+
+.header-content hr{
+    display: none;
+}
+
+
+.social-content .Dashboard-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+
+.Dashboard-container .card-dashboard{
+    max-width: 11rem;
+    width: 100%;
+    height: 100%;
+    background: var(--CardBG);
+    padding:1rem 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+}
+#facebook{
+    border-top: 3px solid  hsl(208, 92%, 53%);
+}
+
+#twitter{
+    border-top: 3px solid   hsl(203, 89%, 53%);
+}
+
+
+
+#instagram{
+    position: relative;
+}
+
+#instagram::before{
+    content: "";
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 4px;
+    background:  linear-gradient( hsl(37, 97%, 70%) , hsl(329, 70%, 58%));
+    border-radius: 50px;
+}
+
+
+#youtube{
+    border-top: 3px solid   hsl(348, 97%, 39%);
+}
+.card-dashboard .card-header{
+    display: flex;
+    align-content: center;
+    gap:10px;
+}
+
+.card-dashboard .card-header p{
+    font-size: 12px;
+}
+
+
+
+.card-dashboard .card-content{
+    padding:20px 0;
+    text-align: center;
+}
+
+.card-dashboard .card-content h1{
+    font-size: 3.4rem;
+    font-weight: bold;
+    color: var(--Text);
+    letter-spacing: 5px;
+}
+
+.card-dashboard .card-content p{
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.card-dashboard .card-footer{
+    display: flex;
+    align-items: center;
+    gap:3px;
+    color:var(--LimeGreen)
+}
+
+#down{
+    color: hsl(356, 69%, 56%);
+}
+
+.card-dashboard .card-footer p{
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.social-container .overview-container{
+    height: auto;
+}
+
+
+.social-container .overview-container h1{
+    width: 100%;
+    color: var(--Text);
+    margin:1rem 0;
+}
+
+
+.overview-container .overview-content{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr); /* Set 4 columns with equal width */
+    gap: 1.5rem; /* Add a gap between grid items */
+    width: 100%;
+    height: 8rem;
+    margin: 1rem 0;
+}
+
+
+ .overview-container .card-overview{
+    max-width: 12rem;
+    width: 100%;
+    height: 4rem;
+    background: var(--CardBG);
+    padding:1.5rem 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+ }
+
+ .card-overview .card-overview-header ,.card-overview .card-overview-footer{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+ .card-overview-header img{
+    width: 15px;
+   
+ }
+
+ .card-overview-footer .card-footer-stat p,.card-footer p{
+    color:hsl(146, 68%, 55%)
+ } 
+
+#down p{
+    color:hsl(329, 70%, 58%)
+}
+
+
+ .card-overview-footer .card-footer-stat{
+    display: flex;
+    align-items: center;
+    gap:1px;
+    color:hsl(146, 68%, 55%)
+ }
+
+ .card-overview-footer  h2{
+    font-size: 30px;
+    color: var(--Text);
+ }
+
+ .card-overview-footer .card-footer-stat p{
+    font-size: 13px;
+    
+ }
+
+@media screen and (max-width:1045px){
+    .social-content .Dashboard-container{
+        gap:1rem;
+    }
+    
+    
+    
+    .social-container .social-content {
+    max-width: 790px;
+    }
+    
+    .social-content .header-content{
+        margin:0 0.5rem;
+    }
+    .overview-container .overview-content{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+    }
+    .social-container{
+        min-height: 150vh
+
+    } 
+   
+}
+
+
+@media screen and (max-width:860px){
+    
+    .social-container .social-content {
+        max-width: 620px;
+    }
+    .overview-container .overview-content{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2,250px);
+        margin: 0 auto;
+    }
+    .Dashboard-container .card-dashboard{
+        max-width: 10rem;
+        width: 100%;
+        height: 100%;
+        padding:1rem 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    .social-content .Dashboard-container {
+        gap: 3rem;
+        margin:0 1rem;
+    }
+    .social-container{
+        min-height: 180vh
+
+    } 
+    
+}
+
+
+
+
+@media screen and (max-width: 660px) {
+
+   
+    .Dashboard-container .card-dashboard{
+        max-width: 8rem;
+    }
+    .overview-container {
+        margin:0 1rem;
+    }
+    .overview-container .card-overview{
+        max-width: 10rem;
+    }
+
+    .overview-container .overview-content{
+        grid-template-columns: repeat(2,200px);
+    }
+
+    .social-container .social-content{
+        max-width: 500px;
+    }
+
+    .social-content .Dashboard-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .social-content .header-content{
+        
+        min-width: 200px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:40px;
+    }
+    .header-mode{
+        justify-content: space-between;
+        width: 85%;
+        margin: 0 1rem;
+    }
+    .header-text{
+        width: 85%;
+    }
+    .header-content hr{
+        display: inline;
+        width: 85%;
+    }
+
+}
+
+
+@media screen and (max-width: 460px) {
+    
+    .social-container{
+        min-height: 330vh;
+
+    } 
+    .overview-container .overview-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+    .social-content{
+        max-width: none;
+        width: 100%;
+    }
+
+    .overview-container .card-overview{
+        max-width: none;
+        width: 80%;
+        margin:0 1rem;
+    }
+    .social-content .Dashboard-container{
+        margin: 0 0.5rem;
+    }
+    .Dashboard-container .card-dashboard{
+        max-width: none;
+        width: 70%;
+        margin:0 1rem;
+    }
+    .social-container .social-content {
+        max-width: 350px;
+    }
+    
+
+    
+
+}
+
+@media screen and (max-width: 330px) {
+    
+    .social-container{
+        min-height: 340vh;
+
+    } 
+
+}
