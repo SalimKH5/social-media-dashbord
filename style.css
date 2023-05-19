@@ -6,10 +6,6 @@
     padding:0;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-}
 
 
 
@@ -43,6 +39,20 @@ body{
 }
 
 
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+}
+
+
 
 p{
     color:var(--BlueText);
@@ -50,26 +60,13 @@ p{
 
 }
 
-.social-container{
-    margin: 0;
-    padding:0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    min-height: 100vh;
-    height: 100%;
-    
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.social-container .social-content {
+.social-content {
     max-width: 1000px;
     width: 100%;
     height: 100%;
+    margin-top: 1rem;
+ 
 }
 
 .social-content .header-content{
@@ -136,10 +133,14 @@ p{
 }
 
 
+.Dashboard-container,.overview-container{
+    height: auto;
+}
+
 .social-content .Dashboard-container{
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     padding: 10px 0;
     gap:1rem;
     flex-wrap: wrap;
@@ -147,6 +148,7 @@ p{
 
 .Dashboard-container .card-dashboard{
     max-width: 11rem;
+    max-height: 10rem;
     width: 100%;
     height: 100%;
     background: var(--CardBG);
@@ -230,30 +232,28 @@ p{
     font-weight: bold;
 }
 
-.social-container .overview-container{
-    height: auto;
-}
 
 
-.social-container .overview-container h1{
+
+ .overview-container h1{
     width: 100%;
     color: var(--Text);
     margin:1rem 0;
 }
 
 
-.overview-container .overview-content{
+ .overview-content{
     display: grid;
     grid-template-rows: auto;
+    height: auto;
     grid-template-columns: repeat(4, 1fr); /* Set 4 columns with equal width */
     gap: 1.5rem; /* Add a gap between grid items */
     width: 100%;
-    height: 8rem;
     margin: 1rem 0;
 }
 
 
- .overview-container .card-overview{
+ .card-overview{
     max-width: 12rem;
     width: 100%;
     height: 4rem;
@@ -302,167 +302,102 @@ p{
  .card-overview-footer .card-footer-stat p{
     font-size: 13px;
     
- }
-
-@media screen and (max-width:1045px){
-    .social-content .Dashboard-container{
-        gap:1rem;
-    }
-    
-    
-    
-    .social-container .social-content {
-    max-width: 790px;
-    }
-    
-    .social-content .header-content{
-        margin:0 0.5rem;
-    }
-    .overview-container .overview-content{
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(3, 1fr);
-        margin: 0 auto;
-    }
-    .social-container{
-        min-height: 150vh
-
-    } 
-   
 }
 
 
-@media screen and (max-width:860px){
+
+@media screen and (max-width:945px) {
+    .social-content{
+        max-width: 740px;
+    }
     
-    .social-container .social-content {
-        max-width: 620px;
-    }
-    .overview-container .overview-content{
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(2,250px);
-        margin: 0 auto;
-    }
-    .Dashboard-container .card-dashboard{
-        max-width: 10rem;
+    .social-content .Dashboard-container,
+    .overview-content{
+        grid-template-columns: repeat(3,1fr);
         width: 100%;
-        height: 100%;
-        padding:1rem 30px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        border-radius: 8px;
+        margin:5rem 0;
     }
-    .social-content .Dashboard-container {
-        gap: 3rem;
-        margin:0 1rem;
-    }
-    .social-container{
-        min-height: 180vh
-
-    } 
     
 }
 
 
 
 
-@media screen and (max-width: 660px) {
 
-   
-    .Dashboard-container .card-dashboard{
-        max-width: 8rem;
+
+
+@media screen and (max-width:785px){
+    .social-content{
+        max-width: 540px;
     }
-    .overview-container {
-        margin:0 1rem;
+    
+    .social-content .Dashboard-container,
+    .overview-content{
+        grid-template-columns: repeat(2,250px);
+        width: 100%;
+      
     }
-    .overview-container .card-overview{
-        max-width: 10rem;
+    
+}
+
+
+
+
+@media screen and (max-width:560px) {
+    .social-content {
+        max-width: none;
+        width: 90%;
+    }
+    
+    
+    .social-content .Dashboard-container,
+    .overview-content{
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 2rem 0;         
     }
 
-    .overview-container .overview-content{
-        grid-template-columns: repeat(2,200px);
+    .Dashboard-container .card-dashboard,.card-overview{
+        width: 80%;
+        max-width: none;
     }
-
-    .social-container .social-content{
-        max-width: 500px;
+    .card-overview{
+        width: 85%;
     }
-
-    .social-content .Dashboard-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
+        
 
     .social-content .header-content{
-        
-        min-width: 200px;
-        flex-direction: column;
         justify-content: flex-start;
-        gap:40px;
-    }
-    .header-mode{
-        justify-content: space-between;
-        width: 85%;
-        margin: 0 1rem;
-    }
-    .header-text{
-        width: 85%;
+        flex-direction: column;
+        gap:1rem;
+        width: 100%;
+        max-width: none;
+
     }
     .header-content hr{
-        display: inline;
-        width: 85%;
-    }
-
-}
-
-
-@media screen and (max-width: 460px) {
-    
-    .social-container{
-        min-height: 330vh;
-
-    } 
-    .overview-container .overview-content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 100%;
-    }
-    .social-content{
-        max-width: none;
+        display: inline-block;
         width: 100%;
     }
 
-    .overview-container .card-overview{
-        max-width: none;
-        width: 80%;
-        margin:0 1rem;
+    .header-content .header-text{
+        width: 100%;
     }
-    .social-content .Dashboard-container{
-        margin: 0 0.5rem;
+    .header-content .header-mode{
+        justify-content: space-between;
+        width: 100%;
     }
-    .Dashboard-container .card-dashboard{
-        max-width: none;
-        width: 70%;
-        margin:0 1rem;
-    }
-    .social-container .social-content {
-        max-width: 350px;
-    }
-    
 
-    
 
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width:220px) {
+    .social-content {
+        max-width: none;
+        width: 60%;
+    }
+    Dashboard-container .card-dashboard,.card-overview{
+        width: 60%;
+        max-width: none;
+    }
     
-    .social-container{
-        min-height: 340vh;
-
-    } 
-
 }
