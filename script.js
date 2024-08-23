@@ -1,26 +1,23 @@
-const button_mode=document.querySelector('.button-mode')
-const social_container=document.querySelector('.social-container')
-const btncontrol=document.querySelector('.button-control')
-const mode=document.getElementById('mode')
-const html=document.documentElement
+const buttonMode = document.querySelector('.button-mode');
+const btnControl = document.querySelector('.button-control');
+const mode = document.getElementById('mode');
+const html = document.documentElement;
 
+let isRightAligned = true;
 
+buttonMode.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const isLightMode = currentTheme === "light";
 
-button_mode.addEventListener('click',()=>{  
+    // Toggle theme
+    html.setAttribute('data-theme', isLightMode ? 'dark' : 'light');
+    mode.textContent = isLightMode ? "Dark Mode" : "Light Mode";
     
-    const currenttheme=html.getAttribute('data-theme')
-    console.log(currenttheme)
-   if(currenttheme === "light"){
-    html.setAttribute('data-theme', 'dark');
-    btncontrol.classList.remove('btn-left')
-    btncontrol.classList.add('btn-right')
-    mode.innerHTML="Dark Mode"
+    // Toggle button position
+    btnControl.classList.toggle('btn-right', isRightAligned);
+    btnControl.classList.toggle('btn-left', !isRightAligned);
+   
+    isRightAligned = !isRightAligned;
 
-   }else{
-    html.setAttribute('data-theme', 'light');
-    btncontrol.classList.remove('btn-right')
-    btncontrol.classList.add('btn-left')
-    mode.innerHTML="Light Mode"
-    
-   }
-})
+    console.log({ btnControl: btnControl.classList });
+});

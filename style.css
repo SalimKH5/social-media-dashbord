@@ -44,8 +44,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     top: 0;
     bottom: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,8 +65,11 @@ p{
     max-width: 1000px;
     width: 100%;
     height: 100%;
-    margin-top: 1rem;
- 
+    padding:2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .social-content .header-content{
@@ -116,7 +119,6 @@ p{
     position: absolute;
     left:0;
 }
-
 
 .btn-right{
     position: absolute;
@@ -238,7 +240,7 @@ p{
  .overview-container h1{
     width: 100%;
     color: var(--Text);
-    margin:1rem 0;
+    padding:1rem 0;
 }
 
 
@@ -247,9 +249,8 @@ p{
     grid-template-rows: auto;
     height: auto;
     grid-template-columns: repeat(4, 1fr); /* Set 4 columns with equal width */
-    gap: 1.5rem; /* Add a gap between grid items */
+    gap: 4rem; /* Add a gap between grid items */
     width: 100%;
-    margin: 1rem 0;
 }
 
 
@@ -267,7 +268,7 @@ p{
  }
 
  .card-overview .card-overview-header ,.card-overview .card-overview-footer{
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -315,7 +316,7 @@ p{
     .overview-content{
         grid-template-columns: repeat(3,1fr);
         width: 100%;
-        margin:5rem 0;
+        padding:5rem 0;
     }
     
 }
